@@ -7,7 +7,7 @@
 [![Build Status](https://travis-ci.org/joaquimserafim/amqp-uri.png?branch=master)](https://travis-ci.org/joaquimserafim/amqp-uri)
 
 
-info about AMQP URI Specification in [here|http://www.rabbitmq.com/uri-spec.html]
+info about AMQP URI Specification in [here](http://www.rabbitmq.com/uri-spec.html)
 
 ####Example
 
