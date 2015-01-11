@@ -44,3 +44,13 @@ test('now with SSL', function(assert) {
   assert.equal('amqps://localhost:5671', uri, uri);
   assert.end();
 });
+
+test('now with query parameters', function(assert) {
+  var obj = {
+    heartbeat: 10
+  };
+
+  var uri = amqpUri(obj);
+  assert.equal('amqp://localhost:5672?heartbeat=10', uri, uri);
+  assert.end();
+});
