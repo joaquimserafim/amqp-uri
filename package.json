@@ -10,6 +10,10 @@
     "check-coverage": "./node_modules/istanbul/lib/cli.js check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
     "open-coverage": "open coverage/lcov-report/index.html"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joaquimserafim/amqp-uri"
+  },
   "bugs": {
     "url": "https://github.com/joaquimserafim/amqp-uri/issues"
   },
