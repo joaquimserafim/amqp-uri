@@ -1,0 +1,43 @@
+{
+  "name": "amqp-uri",
+  "version": "0.0.0",
+  "description": "creates an AMQP URI from a JS object",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/tape/bin/tape test.js",
+    "jshint": "./node_modules/jshint/bin/jshint -c .jshintrc index.js test.js",
+    "codestyle": "./node_modules/jscs/bin/jscs -p google index.js test.js",
+    "check-coverage": "./node_modules/istanbul/lib/cli",
+    "open-coverage": "open coverage/lcov-report/index.html"
+  },
+  "bugs": {
+    "url": "https://github.com/joaquimserafim/amqp-uri/issues"
+  },
+  "homepage": "https://github.com/joaquimserafim/amqp-uri",
+  "keywords": [
+    "amqp",
+    "uri",
+    "format",
+    "create",
+    "object"
+  ],
+  "author": "@joaquimserafim",
+  "license": "ISC",
+  "devDependencies": {
+    "istanbul": "^0.3.5",
+    "jscs": "^1.9.0",
+    "jshint": "^2.5.11",
+    "pre-commit": "0.0.9",
+    "tape": "^3.0.3",
+    "which": "^1.0.8"
+  },
+  "dependencies": {
+    "ferror": "^1.1.2"
+  },
+  "pre-commit": [
+    "jshint",
+    "codestyle",
+    "test",
+    "check-coverage"
+  ]
+}
