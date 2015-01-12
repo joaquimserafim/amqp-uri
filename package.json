@@ -1,6 +1,6 @@
 {
   "name": "amqp-uri",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "creates an AMQP URI from a JS object",
   "main": "index.js",
   "scripts": {

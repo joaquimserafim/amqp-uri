@@ -6,7 +6,7 @@ var error   = require('ferror')('amqp-uri');
 //
 // amqp_URI = "amqp://" amqp_authority [ "/" vhost ] [ "?" query ]
 //
-// cacertfile certfile keyfile 
+// cacertfile certfile keyfile
 // verify fail_if_no_peer_cert
 // mechanism
 // heartbeat - OK
@@ -19,9 +19,9 @@ module.exports = amqpUri();
 function amqpUri() {
   var defaults = [
     'heartbeat',
-    'connection_timeout',
-    'channel_max',
-    'frame_max'
+    'connectionTimeout',
+    'channelMax',
+    'frameMax'
   ];
 
   function isJsObject(arg) {
