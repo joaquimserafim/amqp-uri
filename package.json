@@ -36,7 +36,7 @@
     "which": "^1.0.8"
   },
   "dependencies": {
-    "ferror": "^1.1.2"
+    "ferror": "^1.1.3"
   },
   "pre-commit": [
     "jshint",
