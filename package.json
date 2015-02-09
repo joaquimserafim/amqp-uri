@@ -1,6 +1,6 @@
 {
   "name": "amqp-uri",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "creates an AMQP URI from a JS object",
   "main": "index.js",
   "files": [
@@ -46,7 +46,7 @@
   },
   "pre-commit": [
     "jshint",
-    "codestyle",
+    "code-style",
     "test",
     "check-coverage"
   ]
