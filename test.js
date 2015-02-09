@@ -11,6 +11,30 @@ test('passing a string instead of a JS object', function(assert) {
   assert.end();
 });
 
+test('passing a undefined value', function(assert) {
+  var output = /Only accepts a JS object!/;
+  assert.throws(function() {
+    amqpUri();
+  }, output);
+  assert.end();
+});
+
+test('passing a null value', function(assert) {
+  var output = /Only accepts a JS object!/;
+  assert.throws(function() {
+    amqpUri(null);
+  }, output);
+  assert.end();
+});
+
+test('passing a empty JS Object value', function(assert) {
+  var output = /Only accepts a JS object!/;
+  assert.throws(function() {
+    amqpUri({});
+  }, output);
+  assert.end();
+});
+
 test('passing a valid JS object', function(assert) {
   var obj = {
     ssl: false,
