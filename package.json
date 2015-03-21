@@ -1,6 +1,6 @@
 {
   "name": "amqp-uri",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "creates an AMQP URI from a JS object",
   "main": "index.js",
   "files": [
@@ -34,14 +34,14 @@
   "author": "@joaquimserafim",
   "license": "ISC",
   "devDependencies": {
-    "istanbul": "^0.3.5",
-    "jscs": "^1.11.1",
-    "jshint": "^2.6.0",
-    "pre-commit": "^1.0.2",
+    "istanbul": "^0.3.8",
+    "jscs": "^1.11.3",
+    "jshint": "^2.6.3",
+    "pre-commit": "^1.0.6",
     "tape": "^3.5.0"
   },
   "dependencies": {
-    "is-js-obj-empty": "^1.0.1",
+    "is-js-obj-empty": "^1.0.2",
     "is-js-object": "^1.0.0"
   },
   "pre-commit": [

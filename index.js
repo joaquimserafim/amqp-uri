@@ -1,8 +1,8 @@
-'use strict';
+'use strict'
 
-var util        = require('util');
-var isJsObject  = require('is-js-object');
-var isEmpty     = require('is-js-obj-empty');
+var format      = require('util').format
+var isJsObject  = require('is-js-object')
+var isEmpty     = require('is-js-obj-empty')
 
 //
 // amqp_URI = "amqp://" amqp_authority [ "/" vhost ] [ "?" query ]
@@ -15,56 +15,48 @@ var isEmpty     = require('is-js-obj-empty');
 // channel_max - OK
 // frame_max - OK
 
-module.exports = amqpUri();
-module.exports.AMQPURIError = AMQPURIError;
+module.exports = AMQPUri
 
-function amqpUri() {
+function AMQPUri(conf) {
   var defaults = [
     'heartbeat',
     'connectionTimeout',
     'channelMax',
     'frameMax'
-  ];
+  ]
 
   function params(conf) {
-    return defaults.map(function(def) {
+    var rParams = []
+    defaults.forEach(function(def) {
       if (conf[def]) {
-        return util.format('%s=%s', def, conf[def]);
+        rParams.push(format('%s=%s', def, conf[def]))
       }
     })
-    .filter(function(param) { return param; })
-    .join('&');
+
+    return rParams.join('&')
   }
 
   function create(conf) {
     if (!isJsObject(conf) || isEmpty(conf)) {
-      throw new AMQPURIError('Only accepts a JS object!');
+      throw new TypeError('Only accepts a JS object!')
     }
 
-    var auth = '';
-    var query = params(conf);
+    var auth  = ''
+    var query = params(conf)
 
     if (conf.user && conf.password) {
-      auth = util.format('%s:%s@', conf.user, conf.password);
+      auth = format('%s:%s@', conf.user, conf.password)
     }
 
-    return util.format('%s://%s%s:%d%s%s',
+    return format('%s://%s%s:%d%s%s',
       conf.ssl ? 'amqps' : 'amqp',
       auth,
       conf.host || 'localhost',
       conf.port || (conf.ssl ? 5671 : 5672),
       conf.vhost ? '/' + conf.vhost : '',
       query && '?' + query
-    );
+    )
   }
 
-  return create;
+  return create(conf)
 }
-
-function AMQPURIError(error) {
-  Error.call(this);
-  Error.captureStackTrace(this, this.constructor);
-  this.name = this.constructor.name;
-  this.message = error;
-}
-util.inherits(AMQPURIError, Error);
